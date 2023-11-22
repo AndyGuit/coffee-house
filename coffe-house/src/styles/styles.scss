@@ -13,6 +13,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $background-body;
+
+}
+
 ul {
   list-style: none;
 }
@@ -20,12 +30,6 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: $background-body;
-
 }
 
 .container {
