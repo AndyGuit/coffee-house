@@ -2,10 +2,49 @@
 @import './color-vars.scss';
 @import './typography-classes.scss';
 
-body {
-  font-family: 'Inter', sans-serif;
+@import './components/header.scss';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: $border-light;
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $background-body;
+
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.nav-link {
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    border-bottom: 2px solid $text-dark;
+    transition: width 0.3s ease;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
 }

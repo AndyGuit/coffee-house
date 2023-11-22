@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  nav {
+    padding: 16px 0;
+  }
+
+  &__nav {
+    &--page {
+      width: 100%;
+      max-width: 456px;
+      ul {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &--menu {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        // container for link and svg image
+        div {
+          display: flex;
+          gap: 8px;
+          align-items: flex-start;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
