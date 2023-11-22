@@ -32,8 +32,16 @@ a {
   color: inherit;
 }
 
-section {
+section,
+footer {
   margin-top: 100px;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .container {
@@ -75,6 +83,22 @@ section {
 
         img {
           filter: unset;
+        }
+      }
+    }
+  }
+
+  .mobile-app {
+    &__store {
+      &:hover {
+        background-color: transparent;
+
+        .store-text {
+          color: $text-dark;
+        }
+
+        img {
+          filter: none;
         }
       }
     }

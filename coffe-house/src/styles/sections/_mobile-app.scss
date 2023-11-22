@@ -1,0 +1,58 @@
+.mobile-app {
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 630px;
+    margin-top: 144px;
+  }
+
+  &__heading {
+    em {
+      color: $text-accent;
+    }
+  }
+
+  &__stores {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__store {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 200px;
+    height: 64px;
+    padding: 12px 20px;
+    border: 1px solid $border-dark;
+    border-radius: 100px;
+
+    transition: background 0.3s ease;
+
+    .store-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      color: $text-dark;
+
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: $background-container;
+
+      .store-text {
+        color: $text-light;
+      }
+
+      img {
+        filter: invert(99%) sepia(93%) saturate(376%) hue-rotate(302deg) brightness(97%) contrast(81%);filter: invert(86%) sepia(8%) saturate(361%) hue-rotate(346deg) brightness(103%) contrast(85%);
+      }
+    }
+  }
+}
