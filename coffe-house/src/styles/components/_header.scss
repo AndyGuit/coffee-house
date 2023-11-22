@@ -21,6 +21,8 @@
       ul {
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
+
         // container for link and svg image
         div {
           display: flex;

@@ -1,0 +1,79 @@
+.favorite-coffee {
+  margin-top: 100px;
+
+  &__heading {
+    text-align: center;
+    color: $text-dark;
+
+    em {
+      color: $text-accent;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    img {
+      width: 480px;
+      height: 480px;
+    }
+  }
+  &__desc {
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+
+    span {
+      width: 40px;
+      height: 4px;
+      border-radius: 100px;
+      background-color: $border-light;
+      cursor: pointer;
+
+      &.active {
+        background-color: $border-dark;
+      }
+    }
+  }
+
+  &__back,
+  &__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+    border: 1px solid $border-dark;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 37%;
+    left: 0.3%;
+  }
+
+  &__next {
+    transform: rotate(180deg);
+  }
+
+  &__back {
+    left: unset;
+    right: 0.3%;
+  }
+}
