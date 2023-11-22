@@ -88,6 +88,16 @@ button {
     }
   }
 
+  .about {
+    &__gallery {
+      .image {
+        &:hover {
+          transform: unset;
+        }
+      }
+    }
+  }
+
   .mobile-app {
     &__store {
       &:hover {
