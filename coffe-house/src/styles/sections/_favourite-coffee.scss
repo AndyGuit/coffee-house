@@ -64,6 +64,18 @@
     position: absolute;
     top: 37%;
     left: 0.3%;
+
+    transition: background 0.3s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background-container;
+
+      img {
+        filter: invert(83%) sepia(19%) saturate(152%) hue-rotate(346deg) brightness(102%) contrast(89%);
+      }
+    }
   }
 
   &__next {
