@@ -1,6 +1,8 @@
 .about {
   &__heading {
-    width: 1363px;
+    @media (min-width: 1440px) {
+      width: 1363px;
+    }
     em {
       color: $text-accent;
     }
@@ -13,13 +15,15 @@
 
     .col-1,
     .col-2 {
+      max-width: 660px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 40px;
     }
 
     .image {
-      width: 660px;
+      width: 100%;
       border-radius: 20px;
       background-position: center;
       background-repeat: no-repeat;
