@@ -1,0 +1,50 @@
+.about {
+  &__heading {
+    width: 1363px;
+    em {
+      color: $text-accent;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+
+    .col-1,
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .image {
+      width: 660px;
+      border-radius: 20px;
+      background-position: center;
+    }
+
+    .image-1 {
+      background-image: url('../assets/images/about/about-1.jpg');
+    }
+
+    .image-2 {
+      background-image: url('../assets/images/about/about-2.jpg');
+    }
+
+    .image-3 {
+      background-image: url('../assets/images/about/about-3.jpg');
+    }
+
+    .image-4 {
+      background-image: url('../assets/images/about/about-4.jpg');
+    }
+
+    .img-small {
+      height: 430px;
+    }
+    .img-big {
+      height: 590px;
+    }
+  }
+}
