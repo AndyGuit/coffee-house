@@ -57,3 +57,26 @@ section {
     }
   }
 }
+
+@media (hover:none) {
+  .nav-link {
+    &:hover {
+      &::after {
+        width: 0;
+      }
+    }
+  }
+
+  .slider {
+    &__back,
+    &__next {
+      &:hover {
+        background-color: transparent;
+
+        img {
+          filter: unset;
+        }
+      }
+    }
+  }
+}
