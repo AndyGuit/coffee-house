@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     script: './src/script.js',
     styles: './src/styles/styles.scss',
+    menu: './src/menu.html',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -52,6 +53,12 @@ module.exports = {
       hot: true,
       template: './src/index.html',
       filename: 'index.html',
+      chunks: ['script', 'styles'],
+    }),
+    new HtmlWebpackPlugin({
+      hot: true,
+      template: './src/menu.html',
+      filename: 'menu.html',
       chunks: ['script', 'styles'],
     }),
   ],
