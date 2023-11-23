@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/', // add path to domain on deploy
   },
   module: {
     rules: [
@@ -20,11 +20,26 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: 'resolve-url-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name].[hash][ext]',
+        }
       },
       {
         test: /\.html$/i,
@@ -40,4 +55,10 @@ module.exports = {
       chunks: ['script', 'styles'],
     }),
   ],
+  devServer: {
+    hot: true,
+    static: path.join(__dirname, 'dist'),
+    port: 8080,
+    open: true,
+  },
 };

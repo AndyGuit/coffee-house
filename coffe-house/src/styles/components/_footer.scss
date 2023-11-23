@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
   margin-top: 95px;
   margin-bottom: 40px;
   padding: 100px;
@@ -11,6 +12,10 @@
   &__left,
   &__right {
     flex-basis: 530px;
+  }
+
+  &__right {
+    flex-shrink: 10;
   }
 
   &__heading {
