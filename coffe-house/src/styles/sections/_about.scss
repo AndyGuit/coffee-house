@@ -23,15 +23,23 @@
     }
 
     .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       border-radius: 20px;
       background-position: center;
       background-repeat: no-repeat;
+      overflow: hidden;
 
-      transition: transform 0.3s ease;
+      img {
+        transition: transform 0.3s ease;
+      }
 
       &:hover {
-        transform: scale(0.9);
+        img {
+          transform: scale(0.92);
+        }
       }
     }
 
