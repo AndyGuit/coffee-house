@@ -26,6 +26,8 @@
     border-radius: 100px;
 
     color: $text-dark;
+    cursor: pointer;
+    transition: color 0.3s ease, background 0.3s ease;
 
     span {
       display: flex;
@@ -43,6 +45,17 @@
 
       span {
         background-color: $background-body;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $background-container;
+        color: $text-light;
+
+        span {
+          background-color: $background-body;
+        }
       }
     }
   }
