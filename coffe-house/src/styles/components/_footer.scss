@@ -9,6 +9,10 @@
   border-radius: 40px;
   background-color: $background-container;
 
+  &--menu {
+    margin-top: 100px;
+  }
+
   &__left,
   &__right {
     flex-basis: 530px;

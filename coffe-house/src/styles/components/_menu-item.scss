@@ -1,0 +1,71 @@
+.menu {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    margin-top: 40px;
+
+  }
+
+  &__item {
+    width: 310px;
+    height: 506px;
+    border: 1px solid $border-light;
+    border-radius: 40px;
+    cursor: pointer;
+
+    @media (hover:hover) {
+      &:hover {
+        .menu__item-photo {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
+  &__item-photo {
+    height: 310px;
+    border-radius: 40px;
+    background-position: center;
+
+    transition: transform 0.3s ease;
+  }
+
+  &__item-description {
+    display: flex;
+    flex-direction: column;
+    height: 196px;
+    gap: 12px;
+    padding: 20px;
+
+    h5 {
+      margin-top: auto;
+    }
+  }
+}
+
+.coffee-1 {
+  background-image: url('../../assets/images/menu/coffee-1.jpg');
+}
+.coffee-2 {
+  background-image: url('../../assets/images/menu/coffee-2.jpg');
+}
+.coffee-3 {
+  background-image: url('../../assets/images/menu/coffee-3.jpg');
+}
+.coffee-4 {
+  background-image: url('../../assets/images/menu/coffee-4.jpg');
+}
+.coffee-5 {
+  background-image: url('../../assets/images/menu/coffee-5.jpg');
+}
+.coffee-6 {
+  background-image: url('../../assets/images/menu/coffee-6.jpg');
+}
+.coffee-7 {
+  background-image: url('../../assets/images/menu/coffee-7.jpg');
+}
+.coffee-8 {
+  background-image: url('../../assets/images/menu/coffee-8.jpg');
+}
