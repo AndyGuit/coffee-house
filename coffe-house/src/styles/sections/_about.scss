@@ -40,9 +40,11 @@
         transition: transform 0.3s ease;
       }
 
-      &:hover {
-        img {
-          transform: scale(0.92);
+      @media (hover: hover) {
+        &:hover {
+          img {
+            transform: scale(0.92);
+          }
         }
       }
     }

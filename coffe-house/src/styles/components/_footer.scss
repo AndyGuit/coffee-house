@@ -48,12 +48,14 @@
 
         transition: background-color 0.3s ease;
 
-        &:hover {
-          border: none;
-          background-color: $background-body;
+        @media (hover: hover) {
+          &:hover {
+            border: none;
+            background-color: $background-body;
 
-          img {
-            filter: invert(20%) sepia(7%) saturate(249%) hue-rotate(2deg) brightness(95%) contrast(83%);
+            img {
+              filter: invert(20%) sepia(7%) saturate(249%) hue-rotate(2deg) brightness(95%) contrast(83%);
+            }
           }
         }
       }
