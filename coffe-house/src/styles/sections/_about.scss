@@ -13,6 +13,10 @@
     gap: 40px;
     margin-top: 40px;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     .col-1,
     .col-2 {
       max-width: 660px;
@@ -20,6 +24,10 @@
       display: flex;
       flex-direction: column;
       gap: 40px;
+
+      @media (max-width: 768px) {
+        max-width: 688px;
+      }
     }
 
     .image {
@@ -51,6 +59,10 @@
 
     .img-small {
       height: 430px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
     .img-big {
       height: 590px;
