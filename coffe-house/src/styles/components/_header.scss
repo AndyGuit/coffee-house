@@ -86,6 +86,10 @@
   }
 
   &__burger-button {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
     width: 44px;
     height: 44px;
     border: 1px solid $border-dark;
