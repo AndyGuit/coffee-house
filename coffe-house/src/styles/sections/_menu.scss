@@ -15,6 +15,10 @@
     justify-content: center;
     gap: 16px;
     margin-top: 40px;
+
+    @media (max-width: 720px) {
+      gap: 8px;
+    }
   }
 
   &__option {

@@ -12,6 +12,11 @@
     padding: 100px 98px 100px 60px;
   }
 
+  @media (max-width: 720px) {
+    padding: 60px 16px;
+    height: 552px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;

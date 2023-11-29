@@ -23,6 +23,9 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: $background-body;
 
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 ul {
@@ -50,6 +53,10 @@ button {
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
+
+  @media (max-width: 720px) {
+    padding: 0 16px;
+  }
 }
 
 .nav-link {

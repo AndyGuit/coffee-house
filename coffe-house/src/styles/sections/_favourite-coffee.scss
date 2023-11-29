@@ -21,6 +21,11 @@
     img {
       width: 480px;
       height: 480px;
+
+      @media (max-width: 720px) {
+        width: 348px;
+        height: 348px;
+      }
     }
   }
   &__desc {
@@ -71,6 +76,10 @@
 
     @media (max-width: 768px) {
       top: 42%;
+    }
+
+    @media (max-width: 720px) {
+      display: none;
     }
 
     @media (hover: hover) {
