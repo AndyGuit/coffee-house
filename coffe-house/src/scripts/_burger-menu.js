@@ -7,7 +7,8 @@ function toggleBurgerMenu() {
   burgerButton.classList.toggle('active');
   navPage.classList.toggle('active');
   navMenu.classList.toggle('active');
-  document.body.classList.toggle('no-scroll')
+  document.body.classList.toggle('no-scroll');
+  window.scroll(0, 0)
 }
 
 burgerButton.addEventListener('click', toggleBurgerMenu)
