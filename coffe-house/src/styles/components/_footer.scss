@@ -9,6 +9,18 @@
   border-radius: 40px;
   background-color: $background-container;
 
+  @media (max-width: 768px) {
+    padding: 100px 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  @media (max-width: 720px) {
+    padding: 60px 16px;
+    gap: 42px;
+  }
+
   &--menu {
     margin-top: 100px;
   }
@@ -16,6 +28,9 @@
   &__left,
   &__right {
     flex-basis: 530px;
+    @media (max-width: 768px) {
+      flex-basis: unset;
+    }
   }
 
   &__right {
@@ -48,12 +63,14 @@
 
         transition: background-color 0.3s ease;
 
-        &:hover {
-          border: none;
-          background-color: $background-body;
+        @media (hover: hover) {
+          &:hover {
+            border: none;
+            background-color: $background-body;
 
-          img {
-            filter: invert(20%) sepia(7%) saturate(249%) hue-rotate(2deg) brightness(95%) contrast(83%);
+            img {
+              filter: invert(20%) sepia(7%) saturate(249%) hue-rotate(2deg) brightness(95%) contrast(83%);
+            }
           }
         }
       }
@@ -83,6 +100,7 @@
         width: 100%;
         align-items: center;
         gap: 8px;
+        letter-spacing: 0.3px;
       }
     }
   }

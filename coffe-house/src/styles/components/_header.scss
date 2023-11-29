@@ -3,25 +3,68 @@
   justify-content: space-between;
   padding: 20px 0 17px;
 
-  nav {
-    padding: 16px 0;
-  }
-
   &__nav {
+    transition: left 0.3s ease;
+    &.active {
+      left: 0;
+    }
     &--page {
       width: 100%;
       max-width: 456px;
+      padding: 16px 0;
+
+      @media (max-width: 768px) {
+        height: 100vh;
+        max-width: 768px;
+        position: fixed;
+        top: 101px;
+        left: -100%;
+        padding: 60px 40px;
+        z-index: 2;
+
+        background-color: $background-body;
+      }
       ul {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 58px;
+
+          a {
+            font-size: 32px;
+            line-height: 125%;
+          }
+        }
       }
     }
 
     &--menu {
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: fixed;
+        left: -100%;
+        top: 585px;
+        z-index: 3;
+
+        background-color: $background-body;
+      }
       ul {
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+        padding: 16px 0;
+
+        @media (max-width: 768px) {
+          a {
+            font-size: 32px;
+            line-height: 125%;
+          }
+        }
 
         // container for link and svg image
         div {
@@ -29,7 +72,58 @@
           gap: 8px;
           align-items: flex-start;
           justify-content: center;
+
+          @media (max-width: 768px) {
+            gap: 16px;
+
+            img {
+              width: 40px;
+            }
+          }
         }
+      }
+    }
+  }
+
+  &__burger-button {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
+    width: 44px;
+    height: 44px;
+    border: 1px solid $border-dark;
+    border-radius: 100px;
+    margin-top: 8px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 18px;
+      height: 1.5px;
+
+      position: absolute;
+      left: calc(50% - 9px);
+      transition: all 0.3s ease;
+      background-color: #000;
+    }
+
+    &::before {
+      top: 17px;
+    }
+    &::after {
+      bottom: 17px;
+    }
+
+    &.active {
+      &::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0, -50%);
+      }
+      &::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0, 50%);
       }
     }
   }

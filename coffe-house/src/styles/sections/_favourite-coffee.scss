@@ -21,6 +21,11 @@
     img {
       width: 480px;
       height: 480px;
+
+      @media (max-width: 720px) {
+        width: 348px;
+        height: 348px;
+      }
     }
   }
   &__desc {
@@ -62,18 +67,28 @@
     border-radius: 100%;
 
     position: absolute;
-    top: 37%;
+    top: 42%;
     left: 0.3%;
 
     transition: background 0.3s ease;
 
     cursor: pointer;
 
-    &:hover {
-      background-color: $background-container;
+    @media (max-width: 768px) {
+      top: 42%;
+    }
 
-      img {
-        filter: invert(83%) sepia(19%) saturate(152%) hue-rotate(346deg) brightness(102%) contrast(89%);
+    @media (max-width: 720px) {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $background-container;
+
+        img {
+          filter: invert(83%) sepia(19%) saturate(152%) hue-rotate(346deg) brightness(102%) contrast(89%);
+        }
       }
     }
   }

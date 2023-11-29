@@ -23,6 +23,9 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: $background-body;
 
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 ul {
@@ -50,6 +53,10 @@ button {
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
+
+  @media (max-width: 720px) {
+    padding: 0 16px;
+  }
 }
 
 .nav-link {
@@ -62,14 +69,18 @@ button {
   }
 
   &.active {
+    cursor: default;
     &::after {
       width: 100%;
       margin-top: 2px;
     }
   }
-  &:hover {
-    &::after {
-      width: 100%;
+
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
     }
   }
 
@@ -81,72 +92,6 @@ button {
       margin-top: 5px;
       border-bottom: 2px solid $text-light;
       transition: width 0.3s ease;
-    }
-  }
-}
-
-@media (hover:none) {
-  .nav-link {
-    &:hover {
-      &::after {
-        width: 0;
-      }
-    }
-  }
-
-  .slider {
-    &__back,
-    &__next {
-      &:hover {
-        background-color: transparent;
-
-        img {
-          filter: unset;
-        }
-      }
-    }
-  }
-
-  .about {
-    &__gallery {
-      .image {
-        &:hover {
-          transform: unset;
-        }
-      }
-    }
-  }
-
-  .mobile-app {
-    &__store {
-      &:hover {
-        background-color: transparent;
-
-        .store-text {
-          color: $text-dark;
-        }
-
-        img {
-          filter: none;
-        }
-      }
-    }
-  }
-
-  .footer {
-    &__social {
-      ul {
-        li {
-          &:hover {
-            border: 1px solid $border-light;
-            background-color: transparent;
-
-            img {
-              filter: unset;
-            }
-          }
-        }
-      }
     }
   }
 }

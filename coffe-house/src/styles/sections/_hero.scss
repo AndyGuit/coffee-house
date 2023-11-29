@@ -8,6 +8,15 @@
   background-size: cover;
   background-position: center;
 
+  @media (max-width: 768px) {
+    padding: 100px 98px 100px 60px;
+  }
+
+  @media (max-width: 720px) {
+    padding: 60px 16px;
+    height: 552px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -38,9 +47,17 @@
 
     background-color: $background-body;
 
+    @media (max-width: 768px) {
+      padding: 20px 76px 20px 78px;
+    }
+
     img {
       width: 0;
       transition: width 0.4s linear;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
 
     &:hover {
