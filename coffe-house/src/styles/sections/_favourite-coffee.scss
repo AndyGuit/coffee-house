@@ -12,12 +12,27 @@
 .slider {
   position: relative;
 
+  &__items {
+    width: 480px;
+    height: 678px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+
+    position: absolute;
+
+    transition: transform 0.7s ease;
+
     img {
       width: 480px;
       height: 480px;
@@ -39,19 +54,33 @@
 
   &__pagination {
     display: flex;
+    justify-content: center;
     gap: 12px;
     margin-top: 40px;
 
-    span {
+    &-bar {
+      position: relative;
+      display: block;
       width: 40px;
       height: 4px;
       border-radius: 100px;
       background-color: $border-light;
       cursor: pointer;
 
+      transition: background 0.3s ease;
+
       &.active {
         background-color: $border-dark;
       }
+    }
+
+    &-progress {
+      position: absolute;
+      width: 0;
+      height: 100%;
+      border-radius: 100px;
+      background-color: $border-dark;
+      transition: width 0.3s ease;
     }
   }
 
@@ -94,11 +123,11 @@
   }
 
   &__next {
-    transform: rotate(180deg);
+    left: unset;
+    right: 0.3%;
   }
 
   &__back {
-    left: unset;
-    right: 0.3%;
+    transform: rotate(180deg);
   }
 }
