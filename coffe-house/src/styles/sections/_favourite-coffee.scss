@@ -20,6 +20,11 @@
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: 720px) {
+      width: 348px;
+      height: 570px;
+    }
   }
 
   &__item {
@@ -96,16 +101,12 @@
     border-radius: 100%;
 
     position: absolute;
-    top: 42%;
+    top: 45.5%;
     left: 0.3%;
 
     transition: background 0.3s ease;
 
     cursor: pointer;
-
-    @media (max-width: 768px) {
-      top: 42%;
-    }
 
     @media (max-width: 720px) {
       display: none;
