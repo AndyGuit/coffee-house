@@ -41,11 +41,11 @@
       }
     }
 
-    @media (max-width: 768px) {
-      &:nth-last-child(-n+4) {
-        display: none;
-      }
-    }
+    // @media (max-width: 768px) {
+    //   &:nth-last-child(-n+4) {
+    //     display: none;
+    //   }
+    // }
   }
 
   &__item-photo {
