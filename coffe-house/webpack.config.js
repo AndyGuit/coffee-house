@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     script: './src/script.js',
+    carousel: './src/scripts/_carousel.js',
+    burger: './src/scripts/_burger-menu.js',
+    menuImages: './src/scripts/_image-imports.js',
+    menuItems: './src/scripts/_menu.js',
     styles: './src/styles/styles.scss',
     menu: './src/menu.html',
   },
@@ -53,13 +57,13 @@ module.exports = {
       hot: true,
       template: './src/index.html',
       filename: 'index.html',
-      chunks: ['script', 'styles'],
+      chunks: ['carousel', 'burger', 'styles'],
     }),
     new HtmlWebpackPlugin({
       hot: true,
       template: './src/menu.html',
       filename: 'menu.html',
-      chunks: ['script', 'styles'],
+      chunks: ['menuImages', 'menuItems', 'burger', 'styles'],
     }),
   ],
   devServer: {
