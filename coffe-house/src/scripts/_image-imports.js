@@ -18,9 +18,13 @@ import tea1 from '../assets/images/menu/tea-1.png';
 import tea2 from '../assets/images/menu/tea-2.png';
 import tea3 from '../assets/images/menu/tea-3.png';
 import tea4 from '../assets/images/menu/tea-4.png';
+import info from '../assets/icons/info-empty.svg';
 
 export const images = {
   coffee: [coffee1, coffee2, coffee3, coffee4, coffee5, coffee6, coffee7, coffee8],
   dessert: [dessert1, dessert2, dessert3, dessert4, dessert5, dessert6, dessert7, dessert8],
   tea: [tea1, tea2, tea3, tea4],
+  icons: {
+    info
+  }
 }

@@ -60,7 +60,7 @@ menuOptions.forEach(option => {
 
 function menuItemComponent({name, description, price, category, index}) {
   const item = `
-    <li class="menu__item">
+    <li data-category="${category}" data-index="${index}" class="menu__item">
       <div class="menu__item-photo">
         <img src="${images[category][index]}" alt="${category}-${index}">
       </div>

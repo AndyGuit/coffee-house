@@ -1,5 +1,5 @@
 #backdrop {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -9,6 +9,10 @@
   width: 100vw;
   height: 100vh;
   background-color: $backdrop;
+
+  &.active {
+    display: flex;
+  }
 
   .modal {
     display: flex;
@@ -54,6 +58,10 @@
         h5 {
           margin-bottom: 8px;
         }
+      }
+
+      &__additives ul li.active {
+        cursor: pointer;
       }
 
       &__tabs {
