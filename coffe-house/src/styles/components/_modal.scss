@@ -1,0 +1,144 @@
+#backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  padding: 0 40px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $backdrop;
+
+  .modal {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 40px;
+    background-color: $background-body;
+
+    .item {
+      &__img {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 310px;
+        height: 310px;
+        border-radius: 40px;
+        overflow: hidden;
+
+        @media (max-width: 700px) {
+          display: none;
+        }
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        color: $text-dark;
+      }
+
+      &__description {
+        h4 {
+          margin-bottom: 12px;
+        }
+      }
+
+      &__sizes,
+      &__additives {
+        h5 {
+          margin-bottom: 8px;
+        }
+      }
+
+      &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 16px 8px 8px;
+          border: 1px solid $border-light;
+          border-radius: 100px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, color 0.3s ease;
+
+
+          &.active {
+            background-color: $background-container;
+            color: $text-light;
+            cursor: default;
+
+            span {
+              background-color: $background-body;
+              color: $text-dark;
+            }
+          }
+
+          @media (hover: hover) {
+            &:hover {
+              background-color: $background-container;
+              color: $text-light;
+
+              span {
+                background-color: $background-body;
+                color: $text-dark;
+              }
+            }
+          }
+
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            background-color: $border-light;
+            border-radius: 100px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+          }
+        }
+      }
+
+      &__total-price {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__alert {
+        padding: 12px 0 12px 24px;
+        border-top: 1px solid $border-light;
+        position: relative;
+
+        &-icon {
+          position: absolute;
+          top: 12px;
+          left: 0;
+        }
+      }
+
+      &__close-modal {
+        border: 1px solid $border-dark;
+        border-radius: 40px;
+        padding: 10px 0;
+
+        transition: background 0.3s ease, color 0.3s ease;
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: $background-container;
+            color: $text-light;
+          }
+        }
+      }
+    }
+  }
+}

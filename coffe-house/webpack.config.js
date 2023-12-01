@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    script: './src/script.js',
     carousel: './src/scripts/_carousel.js',
     burger: './src/scripts/_burger-menu.js',
     menuImages: './src/scripts/_image-imports.js',
     menuItems: './src/scripts/_menu.js',
+    modal: './src/scripts/_modal.js',
     styles: './src/styles/styles.scss',
     menu: './src/menu.html',
   },
@@ -63,7 +63,7 @@ module.exports = {
       hot: true,
       template: './src/menu.html',
       filename: 'menu.html',
-      chunks: ['menuImages', 'menuItems', 'burger', 'styles'],
+      chunks: ['menuImages', 'menuItems', 'modal', 'burger', 'styles'],
     }),
   ],
   devServer: {
