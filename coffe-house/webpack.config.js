@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
+    'video': './src/scripts/_video.js',
     carousel: './src/scripts/_carousel.js',
     burger: './src/scripts/_burger-menu.js',
     menuImages: './src/scripts/_image-imports.js',
@@ -57,7 +58,7 @@ module.exports = {
       hot: true,
       template: './src/index.html',
       filename: 'index.html',
-      chunks: ['carousel', 'burger', 'styles'],
+      chunks: ['video', 'carousel', 'burger', 'styles'],
     }),
     new HtmlWebpackPlugin({
       hot: true,
