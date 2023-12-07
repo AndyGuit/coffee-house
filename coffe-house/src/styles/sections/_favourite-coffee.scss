@@ -47,6 +47,13 @@
         height: 348px;
       }
     }
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        // transform: translateX('#{($i - 1)}%')
+        transform: translateX(#{100 * ($i - 1)} + '%');
+      }
+    }
   }
   &__desc {
     max-width: 480px;

@@ -6,9 +6,9 @@
   position: relative;
   overflow: hidden;
 
-  // background-image: url('../../assets/images/img-hero.jpg');
-  // background-size: cover;
-  // background-position: center;
+  @media (max-width: 776px) {
+    height: fit-content;
+  }
 
   @media (max-width: 768px) {
     padding: 100px 98px 100px 60px;
@@ -17,6 +17,10 @@
   @media (max-width: 720px) {
     padding: 60px 16px;
     height: 552px;
+  }
+
+  @media (max-width: 360px) {
+    height: fit-content;
   }
 
   &__video {

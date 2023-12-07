@@ -8,6 +8,7 @@ let curSlide = 0;
 const dotsAnimationStep = 10;
 let curTime = 0;
 let maxTime = 5000;
+let isIntervalStarted = true;
 
 let intervalSlide = setInterval(showNextSlide, (maxTime - curTime));
 let intervalDots = setInterval(animateIntervalSlideProgress, dotsAnimationStep);
@@ -21,7 +22,6 @@ function animateSlides() {
     slide.style.transform = `translateX(${100 * (index - curSlide)}%)`
   })
 }
-animateSlides();
 
 function showNextSlide() {
   curTime = 0;
@@ -55,13 +55,17 @@ function setDefaultDotStyle() {
 }
 
 function stopIntervals() {
+  isIntervalStarted = false;
   clearInterval(intervalSlide);
   clearInterval(intervalDots);
 }
 
 function startIntervals() {
+  if (isIntervalStarted) return;
+
   intervalSlide = setInterval(showNextSlide, (maxTime - curTime));
   intervalDots = setInterval(animateIntervalSlideProgress, dotsAnimationStep);
+  isIntervalStarted = true;
 }
 
 
@@ -105,6 +109,9 @@ sliderContainer.addEventListener('touchend', (e) => {
 
 sliderContainer.addEventListener('touchmove', (e) => {
   const swipeLength = swipeStartPoint - e.touches[0].clientX;
+
+  console.log('touchmove');
+
 
   if (swipeLength > 100 || swipeLength < -100) {
     swipeDirection = swipeLength < 0 ? 'right' : 'left';
