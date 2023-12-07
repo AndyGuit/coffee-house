@@ -110,9 +110,6 @@ sliderContainer.addEventListener('touchend', (e) => {
 sliderContainer.addEventListener('touchmove', (e) => {
   const swipeLength = swipeStartPoint - e.touches[0].clientX;
 
-  console.log('touchmove');
-
-
   if (swipeLength > 100 || swipeLength < -100) {
     swipeDirection = swipeLength < 0 ? 'right' : 'left';
   }
