@@ -22,6 +22,10 @@
       justify-items: center;
       padding: 0 20px;
     }
+
+    @media (max-width: 375px) {
+      display: flex;
+    }
   }
 
   &__item {
@@ -30,6 +34,11 @@
     border: 1px solid $border-light;
     border-radius: 40px;
     cursor: pointer;
+
+    @media (max-width: 380px) {
+      width: 100%;
+      max-width: 310px;
+    }
 
     @media (hover:hover) {
       &:hover {
