@@ -42,10 +42,13 @@
       position: relative;
       z-index: 1;
 
-      img {
+      picture {
         position: absolute;
         z-index: -1;
-        transition: transform 0.3s ease;
+
+        img {
+          transition: transform 0.3s ease;
+        }
       }
 
       @media (hover: hover) {
