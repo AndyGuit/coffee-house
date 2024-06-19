@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    'video': './src/scripts/_video.js',
+    video: './src/scripts/_video.js',
     carousel: './src/scripts/_carousel.js',
     burger: './src/scripts/_burger-menu.js',
     menuImages: './src/scripts/_image-imports.js',
@@ -41,15 +41,15 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name].[ext]',
-        }
+        },
       },
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
     ],
   },

@@ -9,18 +9,18 @@ let category = 'coffee';
 let limitProductsPerCategory = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-  checkWindowSize()
-})
+  checkWindowSize();
+});
 
 window.addEventListener('resize', (e) => {
-  checkWindowSize()
-})
+  checkWindowSize();
+});
 
 loadMoreBtn.addEventListener('click', () => {
   limitProductsPerCategory = 8;
   loadMoreBtn.style.display = 'none';
   renderMenu();
-})
+});
 
 function checkWindowSize() {
   if (window.innerWidth < 769) {
@@ -35,7 +35,7 @@ function checkWindowSize() {
 }
 
 function getItemsByCategory() {
-  return menuData.filter(item => item.category === category);
+  return menuData.filter((item) => item.category === category);
 }
 
 function changeMenuOption(selectedCategory) {
@@ -43,26 +43,30 @@ function changeMenuOption(selectedCategory) {
 
   checkWindowSize();
 
-  menuOptions.forEach(option => {
+  menuOptions.forEach((option) => {
     const optionCategory = option.dataset.category;
     const isActive = optionCategory === category;
     option.className = `menu__option link-font${isActive ? ' active' : ''}`;
-  })
+  });
 }
 
-menuOptions.forEach(option => {
+menuOptions.forEach((option) => {
   option.addEventListener('click', () => {
-    const selectedCategory = option.dataset.category
+    const selectedCategory = option.dataset.category;
     changeMenuOption(selectedCategory);
     renderMenu();
-  })
-})
+  });
+});
 
-function menuItemComponent({name, description, price, category, index}) {
+function menuItemComponent({ name, description, price, category, index }) {
   const item = `
     <li data-category="${category}" data-index="${index}" class="menu__item">
       <div class="menu__item-photo">
-        <img src="${images[category][index]}" alt="${category}-${index}">
+        <picture>
+          <source srcset="${images[category][index].webp}" type="image/webp">
+          <source srcset="${images[category][index].orig}">
+          <img src="${images[category][index].orig}" alt="${category}-${index}">
+        </picture>
       </div>
       <div class="menu__item-description">
         <h4 class="heading-3">${name}</h4>
@@ -94,6 +98,6 @@ function renderMenu() {
   menuContainer.innerHTML = '';
   limitedItems.forEach((item, index) => {
     const { name, description, price, category } = item;
-    menuContainer.innerHTML += menuItemComponent({name, description, price, category, index});
-  })
-};
+    menuContainer.innerHTML += menuItemComponent({ name, description, price, category, index });
+  });
+}
