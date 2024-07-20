@@ -9,7 +9,7 @@ let totalPrice = 0;
 function showModal() {
   backdrop.classList.add('active');
   document.body.classList.add('no-scroll');
-};
+}
 
 function hideModal() {
   backdrop.classList.remove('active');
@@ -21,7 +21,9 @@ function sizesList(sizes) {
 
   for (let key in sizes) {
     component += `
-    <li data-add-price="${sizes[key]['add-price']}" class="button-font${key === 's' ? ' active' : ''}"><span>${key}</span>${sizes[key].size}</li>
+    <li data-add-price="${sizes[key]['add-price']}" class="button-font${
+      key === 's' ? ' active' : ''
+    }"><span>${key}</span>${sizes[key].size}</li>
     `;
   }
 
@@ -35,7 +37,7 @@ function additivesList(additives) {
     component += `
       <li data-add-price="${additive['add-price']}" class="button-font"><span>${index + 1}</span>${additive.name}</li>
     `;
-  })
+  });
 
   return component;
 }
@@ -45,11 +47,16 @@ function renderNewPrice() {
   priceEl.textContent = `$${totalPrice}`;
 }
 
-
-function modalComponent({category, index, name, description, sizes, additives}) {
+function modalComponent({ category, index, name, description, sizes, additives }) {
   const component = `
   <div class="modal">
-    <div class="item__img" ><img src="${images[category][index]}" alt="${category}-${index}"></div>
+    <div class="item__img">
+      <picture>
+        <source srcset="${images[category][index].webp}" type="image/webp">
+        <source srcset="${images[category][index].orig}">
+        <img src="${images[category][index].orig}" alt="${category}-${index}">
+      </picture>
+    </div>
     <div class="item__content">
       <div class="item__description">
         <h4 class="heading-3">${name}</h4>
@@ -84,21 +91,21 @@ function modalComponent({category, index, name, description, sizes, additives}) 
 
 function renderModalContent(menuItem) {
   backdrop.innerHTML = '';
-  backdrop.innerHTML = modalComponent(menuItem)
+  backdrop.innerHTML = modalComponent(menuItem);
 }
 
 function selectSize(allSizes, selectedSizeItem) {
   let prevSizePrice;
   const newSizePrice = selectedSizeItem.dataset.addPrice;
 
-  allSizes.forEach(el => {
+  allSizes.forEach((el) => {
     if (el.classList.contains('active')) prevSizePrice = el.dataset.addPrice;
 
-    el.classList.remove('active')
+    el.classList.remove('active');
   });
   selectedSizeItem.classList.add('active');
 
-  totalPrice = ((parseFloat(totalPrice) - parseFloat(prevSizePrice)) + parseFloat(newSizePrice)).toFixed(2);
+  totalPrice = (parseFloat(totalPrice) - parseFloat(prevSizePrice) + parseFloat(newSizePrice)).toFixed(2);
 
   renderNewPrice();
 }
@@ -107,10 +114,8 @@ function selectAdditive(selectedAdditive) {
   const price = selectedAdditive.dataset.addPrice;
 
   selectedAdditive.classList.contains('active')
-    ?
-    totalPrice = (parseFloat(totalPrice) - parseFloat(price)).toFixed(2)
-    :
-    totalPrice = (parseFloat(totalPrice) + parseFloat(price)).toFixed(2)
+    ? (totalPrice = (parseFloat(totalPrice) - parseFloat(price)).toFixed(2))
+    : (totalPrice = (parseFloat(totalPrice) + parseFloat(price)).toFixed(2));
 
   selectedAdditive.classList.toggle('active');
 
@@ -123,8 +128,8 @@ backdrop.addEventListener('click', (e) => {
 
   if (e.target.closest('.modal')) return;
 
-  hideModal()
-})
+  hideModal();
+});
 
 backdrop.addEventListener('click', (e) => {
   // select new size
@@ -135,8 +140,8 @@ backdrop.addEventListener('click', (e) => {
   const sizesContainer = e.target.closest('.item__tabs');
   const allSizes = sizesContainer.querySelectorAll('.item__sizes li');
 
-  selectSize(allSizes, selectedSizeItem)
-})
+  selectSize(allSizes, selectedSizeItem);
+});
 
 backdrop.addEventListener('click', (e) => {
   // select additives
@@ -145,7 +150,7 @@ backdrop.addEventListener('click', (e) => {
   if (!selectedAdditive) return;
 
   selectAdditive(selectedAdditive);
-})
+});
 
 menuItems.addEventListener('click', (e) => {
   const menuItem = e.target.closest('.menu__item');
@@ -153,10 +158,10 @@ menuItems.addEventListener('click', (e) => {
   if (!menuItem) return;
 
   const { category, index } = menuItem.dataset;
-  const selectedItem = menuData.filter(item => item.category === category)[index];
+  const selectedItem = menuData.filter((item) => item.category === category)[index];
 
   totalPrice = selectedItem.price;
 
   showModal();
-  renderModalContent({...selectedItem, index});
-})
+  renderModalContent({ ...selectedItem, index });
+});
